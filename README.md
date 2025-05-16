@@ -1,6 +1,6 @@
-# Nome do Projeto
+# Um simples site de estudos
 
-Um site simples de cursos
+Um site simples de estudos
 
 ##  Tecnologias utilizadas
 
