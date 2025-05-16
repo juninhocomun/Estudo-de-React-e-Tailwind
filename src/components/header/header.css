@@ -1,0 +1,65 @@
+header{
+    z-index: 90;
+}
+
+/* Animação padrão das linhas */
+.line,
+.line::after,
+.line::before {
+  will-change: transform;
+  backface-visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.5s ease;
+}
+
+/* Linha central */
+.line {
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #000;
+  position: relative;
+  top: 0.8rem;
+}
+
+/* Linha superior */
+.line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  left: 0;
+  top: -0.8rem;
+  background-color: #000;
+}
+
+/* Linha inferior */
+.line::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  left: 0;
+  top: 0.8rem;
+  background-color: #000;
+}
+
+/* Checkbox escondido */
+#checkbox {
+  display: none;
+}
+
+/* Estado ativado: transforma em "X" */
+#checkbox:checked + label .line {
+  background-color: transparent;
+  transition: background-color 0.2s ease-out;
+}
+
+#checkbox:checked + label .line::before {
+  transform: rotate(-45deg) translate(-2px, 8px) scale(1.1);
+  transform-origin: center left;
+}
+
+#checkbox:checked + label .line::after {
+  transform: rotate(45deg) translate(5px, -2px) scale(1.1);
+  transform-origin: center left;
+}

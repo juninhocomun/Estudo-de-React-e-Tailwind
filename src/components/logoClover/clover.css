@@ -1,0 +1,99 @@
+:root {
+  --leaf-scale: 1.6;
+  --angles-5: 0deg, 72deg, 144deg, 216deg, 288deg;
+  --angles-4: 0deg, 90deg, 180deg, 270deg;
+}
+button {
+  position: absolute;
+  right: -10rem;
+}
+.clover-container {
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  top: 40%;
+  left: 48%;
+  z-index: 100;
+  transition: all 0.8s ease-in-out;
+}
+
+.clover-container.to-corner {
+  top: 1.1rem;
+  left: 6.5rem;
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.clover-leafs-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: spin 20s linear infinite;
+  background: #212225;
+  border-radius: 50%;
+}
+
+svg.clover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  transform-origin: center;
+  color: #2e7d32;
+  opacity: 1;
+  transition: transform 6s ease, opacity 1s ease;
+}
+
+/* Estado padrão (4 folhas) */
+.clover:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateY(-100%) scale(var(--leaf-scale)); }
+.clover:nth-child(2) { transform: translate(-50%, -50%) rotate(90deg) translateY(-100%) scale(var(--leaf-scale)); }
+.clover:nth-child(3) { transform: translate(-50%, -50%) rotate(180deg) translateY(-100%) scale(var(--leaf-scale)); }
+.clover:nth-child(4) { transform: translate(-50%, -50%) rotate(270deg) translateY(-100%) scale(var(--leaf-scale)); }
+.clover:nth-child(5) {
+  transform: translate(-50%, -50%) rotate(288deg) translateY(-100%) scale(var(--leaf-scale));
+  opacity: 0;
+}
+
+/* Ativa modo de 5 folhas com classe no container */
+.clover-leafs-container.animation .clover:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg) translateY(-100%) scale(var(--leaf-scale));
+  z-index: 20;
+}
+.clover-leafs-container.animation .clover:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(72deg) translateY(-100%) scale(var(--leaf-scale));
+  z-index: 20;
+}
+.clover-leafs-container.animation .clover:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(144deg) translateY(-100%) scale(var(--leaf-scale));
+  z-index: 20;
+}
+.clover-leafs-container.animation .clover:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(216deg) translateY(-100%) scale(var(--leaf-scale));
+  z-index: 20;
+}
+.clover-leafs-container.animation .clover:nth-child(5) {
+  transform: translate(-50%, -50%) rotate(288deg) translateY(-100%) scale(var(--leaf-scale));
+  opacity: 1;
+  z-index: 10;
+  animation: leaf5-boom 4s ease-in-out ;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes leaf5-boom {
+  0% {
+    transform: translate(-50%, -50%) rotate(288deg) translateY(-1%) scale(0.1);
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(288deg) translateY(-100%) scale(var(--leaf-scale));
+    opacity: 1;
+  }
+}
