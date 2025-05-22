@@ -1,0 +1,93 @@
+/* Card style */
+.auto {
+  width: 100%;
+}
+.small {
+  width: clamp(10rem, 20vw, 14rem);
+}
+.medium {
+  width: clamp(20rem, 25vw, 24rem);
+}
+.large {
+  width: clamp(28rem, 50vw, 40rem);
+}
+.card {
+  background-color: #1c1d22;
+  border-radius: 1rem;
+  overflow: hidden;
+  aspect-ratio: 100 / 80;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.card-info {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: white;
+}
+
+.text-content h1 {
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text-content h2{
+    position: relative;
+}
+.text-content h2::after {
+  content: attr(data-text);
+  position: absolute;
+  display: block;
+  background-color: #2b2c31;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  top: -2rem;
+  left: -0.1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.text-content h2:hover::after {
+  opacity: 1;
+}
+.text-content h2,
+.text-content p {
+  font-size: 0.875rem;
+  color: #ccc;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* Card style end */

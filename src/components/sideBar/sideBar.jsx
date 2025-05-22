@@ -30,13 +30,15 @@ function SideBar() {
   }
 
   return (
-    <ul className="sideBar flex flex-col justify-start items-center gap-5 h-full w-1/24 bg-[#ececec] absolute left-0 top-0 pt-20 text-[2rem] text-[#000]">
+    <aside>
+    <ul className="z-80 side-bar overflow-hidden flex flex-col justify-start items-center pl-2 gap-5 h-full  w-min-[10rem] w-16 bg-[#ececec] fixed left-0 top-0 pt-20 text-[2rem] text-[#000]">
       {icons.map((icon, index) => (
         <li key={index} onClick={() => toggleVisibility(index)}>
           {visibility[index] ? icon.open : icon.close}
         </li>
       ))}
     </ul>
+    </aside>
   );
 }
 

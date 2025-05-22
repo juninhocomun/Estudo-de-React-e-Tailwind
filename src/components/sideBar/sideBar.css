@@ -2,6 +2,12 @@
   animation: infinite-fall 0.3s ease-in-out;
   z-index: 101;
 }
+@media (max-width: 480px) {
+  .side-bar{
+  left: -100%;
+}
+}
+
 @keyframes infinite-fall {
   0% {
     transform: translateY(0);

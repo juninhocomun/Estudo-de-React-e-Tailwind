@@ -63,3 +63,16 @@ header{
   transform: rotate(45deg) translate(5px, -2px) scale(1.1);
   transform-origin: center left;
 }
+
+@media (max-width: 768px) {
+  header input{
+
+  }
+  
+}
+@media (max-width: 480px) {
+  header input{
+    visibility: hidden;
+  }
+  
+}

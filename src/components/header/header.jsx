@@ -1,7 +1,7 @@
 import "./header.css";
 function Header() {
   return (
-    <header className="bg-[#ececec] absolute top-0 left-0 w-full h-[8vh] pr-5 pb-1 pl-5 flex items-center justify-between">
+    <header className="bg-[#ececec] fixed top-0 left-0 min-w-full max-w-full h-14 pr-5 pb-1 pl-5 flex items-center justify-between">
       <div className="flex items-center justify-center ">
         <input type="checkbox"  id="checkbox" />
         <label className="menu-hamburger cursor-pointer w-10 h-2.5 mb-3" htmlFor="checkbox">
